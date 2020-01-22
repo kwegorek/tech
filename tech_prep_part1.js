@@ -123,7 +123,42 @@ class Heap {
 }
 
 
-//breadth-first 
+//graphs
+class Node {
+  constructor(name) {
+    this.name = name;
+    this.children = [];
+  }
+
+  addChild(name) {
+    this.children.push(new Node(name));
+    return this;
+  }
+
+  dfs(array=[]) {
+   
+		array.push(this.name)
+
+    for(let child of this.children){
+      child.dfs(array)
+    }
+
+    return array
+
+  }
+
+}
+
+let newNode2 = new Node('root')
+
+newNode2.addChild('A')
+newNode2.addChild('B')
+newNode2.addChild('C')
+
+newNode2.children[0].addChild('left_A_child').children[0].addChild('A_child')
+newNode2.children[0].addChild('second_A_child')
+
+console.log(newNode2.dfs())
 
 
 
