@@ -192,3 +192,16 @@ function doesPathExist(graph, start, target){
 
 
 }
+
+// BST implentation 
+
+// Node class 
+class Node 
+{ 
+    constructor(data) 
+    { 
+        this.data = data; 
+        this.left = null; 
+        this.right = null; 
+    } 
+} 
