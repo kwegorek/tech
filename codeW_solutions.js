@@ -1,20 +1,36 @@
-decoderMorse = function(morseCode) {
-  //your code here
-  var alphabet = MORSE_CODE
 
-  let stringToArr = morseCode.split(' ')
+function decodeMorse(morseCode){
 
-  return stringToArr
-    .map(char => {
-      if (char in alphabet) {
-        char = alphabet[char]
+let alphabet = MORSE_CODE
 
-        return char
-      } else {
-        return (char = ' ')
-      }
-    })
-    .join('')
+let splitted = morseCode.split(' ')
+let spaceCalled = 0; 
+
+let word = '' 
+
+for(let i = 0; i < splitted.length; i++){
+
+  if(alphabet[splitted[i]]){
+
+    word+=alphabet[splitted[i]]; 
+    spaceCalled = 0; 
+
+  }else if(alphabet[splitted[i]] === undefined) {
+
+
+    if(spaceCalled === 0){
+      word+= ' '; 
+      spaceCalled++
+    }
+    
+   
+  }
+
+
 }
 
-//
+return word.trim()
+
+
+
+}
