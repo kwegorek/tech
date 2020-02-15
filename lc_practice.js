@@ -28,3 +28,24 @@ var defangIPaddr = function(address) {
     }).join('')
     
 };
+
+var subtractProductAndSum = function(n) {
+    
+    let input_n = String(n); 
+    
+    let n_arr = input_n.split(''); 
+    
+    let product = 1; 
+    let sum = 0; 
+    
+    for(let i = 0; i < n_arr.length;   i++){
+        
+        product*=Number(n_arr[i]); 
+    
+        sum += Number(n_arr[i])
+            
+    }
+    
+    return product - sum
+    
+};
