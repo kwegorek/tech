@@ -15,3 +15,16 @@ var numberOfSteps  = function(num) {
        return 1 + numberOfSteps(num-1)}
         
 }
+
+var defangIPaddr = function(address) {
+    
+    return address.split('').map(el=>{
+        
+        if(el === '.'){
+            return '[.]'
+        }else{
+            return el
+        }
+    }).join('')
+    
+};
