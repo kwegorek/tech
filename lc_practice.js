@@ -64,3 +64,47 @@ var findNumbers = function(nums) {
     return evenNum
     
 };
+var getDecimalValue = function(head) {
+    
+    let binary = []; 
+    
+    let curNode = head
+    
+    while(true){
+                
+        if(curNode.next === null ){
+            
+             binary.push(curNode.val)
+            break
+            
+        }else{
+            
+            binary.push(curNode.val)
+            curNode = curNode.next 
+      
+            
+        }
+        
+        
+    }
+     
+//     let multi = 1;
+//     let res =  0; 
+        
+//     for(let i = binary.length; i >= 0; i--){
+        
+//         res = res + multi*binary[i]
+//         multi = multi*2
+        
+      
+//     }
+    
+    
+    
+    
+    
+    return parseInt(binary.join(''), 2)
+    
+    
+    
+};
