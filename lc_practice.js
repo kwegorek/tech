@@ -49,3 +49,18 @@ var subtractProductAndSum = function(n) {
     return product - sum
     
 };
+
+
+var findNumbers = function(nums) {
+    let evenNum = 0; 
+    
+    for(let i = 0; i < nums.length; i++){
+        
+        if(String(nums[i]).length%2 === 0){
+            evenNum++
+        }
+    }
+    
+    return evenNum
+    
+};
