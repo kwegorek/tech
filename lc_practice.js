@@ -99,12 +99,26 @@ var getDecimalValue = function(head) {
       
 //     }
     
-    
-    
-    
-    
     return parseInt(binary.join(''), 2)
     
+};
+
+var countNegatives = function(grid) {
     
+    let negativeNum = 0; 
+    
+    
+    
+    for(let i = 0; i < grid.length; i++){
+        
+        for(let j = 0; j < grid[i].length; j++){
+            
+            if(grid[i][j]+Math.abs(grid[i][j]) === 0 && grid[i][j]!==0){
+                negativeNum++
+            }
+        }
+    }
+    
+    return negativeNum
     
 };
