@@ -143,3 +143,19 @@ var maximum69Number  = function(num) {
     return Number(newStr.join(''))
     
 }
+
+var rangeSumBST = function(root, L,R) {
+    
+ if (root === null) return 0;
+
+    let lsum = rangeSumBST(root.left,L,R)
+    let rsum = rangeSumBST(root.right,L,R)
+    
+    if(root.val <= R && root.val >= L){
+        return lsum + rsum + root.val
+    }else {
+        
+        return lsum + rsum 
+        
+    }
+};
