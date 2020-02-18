@@ -122,3 +122,24 @@ var countNegatives = function(grid) {
     return negativeNum
     
 };
+
+var maximum69Number  = function(num) {
+    
+    let myNum = String(num); 
+    let splitted = myNum.split(''); 
+    let changed = 0; 
+    let newStr = []; 
+    
+    for(let i=0; i<splitted.length; i++){
+        
+        if(splitted[i]==='6' && changed === 0){
+            newStr.push('9')
+            changed++ 
+        }else{
+            newStr.push(splitted[i])
+        }
+    }
+    
+    return Number(newStr.join(''))
+    
+}
