@@ -194,5 +194,27 @@ var maxDepth = function(root) {
     
     return Math.max(maxDepth(heightL), maxDepth(heightR)) +1
 
+};
 
+var singleNumber = function(nums) {
+    
+    let mySet = {}; 
+    
+    for(let i= 0; i < nums.length; i++){
+      
+       if(!mySet[nums[i]]){
+            mySet[nums[i]]= 1; 
+
+       }else{
+         mySet[nums[i]]+= 1
+
+       }
+     
+        
+    }
+    console.log(mySet)
+    
+    
+    return Object.keys(mySet).find(key => mySet[key] === 1)
+    
 };
