@@ -218,3 +218,24 @@ var singleNumber = function(nums) {
     return Object.keys(mySet).find(key => mySet[key] === 1)
     
 };
+
+var majorityElement = function(nums) {
+    
+    let countElements = {}; 
+    let condition = Math.floor(nums.length/2)
+    console.log(condition)
+    
+    for(let i=0; i< nums.length; i++){
+        
+        if(!countElements[nums[i]]){
+
+            countElements[nums[i]] = 1; 
+        }else{
+            countElements[nums[i]] += 1
+        }
+    }
+    console.log(countElements)
+    
+    return Object.keys(countElements).find(key => countElements[key] > condition)
+    
+};
