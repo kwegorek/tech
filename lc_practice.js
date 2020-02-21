@@ -177,3 +177,22 @@ var reverseString = function(s) {
   return s
 
 };
+
+
+var maxDepth = function(root) {
+    
+     if(!root){
+        
+        return 0
+    
+        
+    }
+    
+    let heightL = root.left
+    let heightR = root.right; 
+    
+    
+    return Math.max(maxDepth(heightL), maxDepth(heightR)) +1
+
+
+};
