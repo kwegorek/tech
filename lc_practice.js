@@ -159,3 +159,21 @@ var rangeSumBST = function(root, L,R) {
         
     }
 };
+
+var reverseString = function(s) {
+
+  for (let i = 0; i < Math.floor(s.length/2); i++) {
+    
+    let last = s[s.length - i-1]
+    console.log('last', last)
+    let first = s[i]
+
+      let temp = s[s.length - i-1]
+       s[i] = temp
+      s[s.length - i-1] = first;
+     
+  }
+
+  return s
+
+};
