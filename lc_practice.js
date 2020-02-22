@@ -260,6 +260,40 @@ var isAnagram = function(s, t) {
 
     return dic
 
+        
+ var firstUniqChar = function(s) {
+    
+    let mySet = {}; 
+    
+    let splittedS = s.split('')
+    
+    for(let i = 0; i < s.length; i++){
+        
+        if(!mySet[s[i]]){
+            
+            mySet[s[i]] = 1
+            
+        } else {
+             mySet[s[i]] += 1
+            
+        } 
+    
+    }
+
+    console.log(mySet)
+    
+    let nonrepeating = Object.keys(mySet).find(el =>{
+      
+      if(mySet[el] === 1){
+        return el
+
+      } })
+
+                                              
+    return s.indexOf(nonrepeating)
+    
+    
+};
     
     }}
 
