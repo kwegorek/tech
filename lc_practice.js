@@ -315,3 +315,26 @@ var containsDuplicate = function(nums) {
     return false
     
 };
+
+var isPowerOfThree = function(n) {
+    let curNum = 1; 
+    
+    if(n === 0){
+        return false
+    }
+    
+    while(true){
+        
+        if(curNum === n){
+            return true
+            break;
+        }else if(curNum > n){
+            return false
+            break
+        }
+        
+        curNum *=3
+    }
+
+   
+};
