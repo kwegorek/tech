@@ -365,3 +365,29 @@ var mergeTwoLists = function(l1, l2) {
 
   return l3head.next
 }
+
+var fizzBuzz = function(n) {
+    let arr = [];
+    
+    for(let i=1; i<=n; i++){
+        console.log(i)
+       if(i%3===0 && i%5 === 0){
+           arr.push("FizzBuzz")
+       }else if(i%5 === 0){
+           arr.push("Buzz")
+       }else if(i%3===0){
+           arr.push("Fizz")
+       }else{
+            arr.push(String(
+i))
+           
+       }
+
+            
+        
+       
+    }
+    return arr
+    
+    
+};
