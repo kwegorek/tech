@@ -393,18 +393,23 @@ i))
 };
 
 var reverseList = function(head) {
-  var node = head
-  var prev = null
-
-  while (node) {
-    var temp = node.next
-    node.next = prev
-    prev = node
-
-    if (!temp) {
-      break
+    
+    var node = head
+    var prev = null; 
+    
+    while(node){
+        
+        var temp = node.next; 
+        
+        node.next = prev; 
+        
+        prev = node; 
+        
+        if(!temp){
+            break;
+        }
+        node = temp
     }
-    node = temp
-  }
-  return node
-}
+    return node
+  
+};
