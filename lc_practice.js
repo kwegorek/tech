@@ -420,3 +420,38 @@ var deleteNode = function(node) {
     node.next = node.next.next
 
 };
+
+var getLength = function(head) {
+  let temp = head
+
+  let size = 0
+
+  while (temp) {
+    size++
+    temp = temp.next
+  }
+
+  return size
+}
+
+var middleNode = function(head) {
+  let listLength = getLength(head)
+  let middleElement = null
+  let currentHead = head
+
+  if (listLength % 2 === 0) {
+    middleElement = listLength / 2
+  } else {
+    middleElement = Math.floor(listLength / 2)
+  }
+
+  while (currentHead !== null) {
+    for (let i = 0; i < listLength; i++) {
+      if (i === middleElement) {
+        return currentHead
+      } else {
+        currentHead = currentHead.next
+      }
+    }
+  }
+}
