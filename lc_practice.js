@@ -455,3 +455,23 @@ var middleNode = function(head) {
     }
   }
 }
+
+ */
+var hasCycle = function(head) {
+    
+    if(head === null || head.next === null){return false}
+    let currentHead = head;
+    let fast = head.next
+
+    while(currentHead!==null && fast!==null&&fast.next !==null ){
+            
+        if(currentHead == fast){    
+            return true
+        }
+        currentHead = currentHead.next
+        fast = fast.next.next
+  
+
+    }
+    return false
+};
