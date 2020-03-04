@@ -488,3 +488,41 @@ var sortedArrayToBST = function(nums) {
     node.right = sortedArrayToBST(nums.slice(mid + 1, nums.length))
     return node;        
 };
+
+var getIntersectionNode = function(headA, headB) {
+    
+    let currentHeadA = headA
+    let currentHeadB = headB
+    
+    let map = {}; 
+    let count = 0; 
+    
+    while (currentHeadA!==null){
+        
+        if(currentHeadA.next === null){break}
+        
+        
+        map[currentHeadA.val] = currentHeadA.next.val
+        currentHeadA = currentHeadA.next
+    }
+    
+    
+     while (currentHeadB!==null){
+        
+        if(map[currentHeadB.val]){
+            console.log(`Intersected at ${map[currentHeadB.val]}`)
+            
+            return `Intersected at ${map[currentHeadB.val]}`
+           
+   
+        }
+         currentHeadB = currentHeadB.next
+         
+         
+      
+    }
+    
+    
+    
+    
+};
