@@ -526,3 +526,19 @@ var getIntersectionNode = function(headA, headB) {
     
     
 };
+
+var detectCycle = function (head) {
+  let mySet = new Set()
+
+  while (head !== null) {
+    if (mySet.has(head)) {
+      return head
+    } else {
+      mySet.add(head)
+    }
+
+    head = head.next
+  }
+
+  return head
+}
