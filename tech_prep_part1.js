@@ -205,3 +205,68 @@ class Node
         this.right = null; 
     } 
 } 
+
+
+function node(val, left=null, right=null){
+  return {
+    val, 
+    left, 
+    right
+  }
+}
+
+let root = node(11,node(7,node(5), node(9)), node(15,node(13), node(20))); 
+
+
+
+console.log(root)
+
+//in-order traversal 
+
+const inorderTraversal = function(nodeItem){
+
+  if(nodeItem === null){
+    return []
+  }
+
+  let values = inorderTraversal(nodeItem.left)
+  values.push(nodeItem.val)
+  
+  return values.concat(inorderTraversal(nodeItem.right))
+
+} 
+
+
+const preOrderTraversal = function(nodeItem){
+
+  if(nodeItem === null){
+    return []
+  }
+  let values = [nodeItem.val]; 
+  values = values.concat((preOrderTraversal(nodeItem.left)))
+  return values.concat(preOrderTraversal(nodeItem.right))
+
+} 
+
+
+const postOrderTraversal = function(nodeItem){
+
+  if(nodeItem === null){
+    return []
+  }
+  let values = []; 
+  
+  values = values.concat(postOrderTraversal(nodeItem.left)); 
+
+  values = values.concat(postOrderTraversal(nodeItem.right))
+
+  values.push(nodeItem.val); 
+
+  return values
+}
+
+inorderTraversal(root)
+
+preOrderTraversal(root)
+
+postOrderTraversal(root)
