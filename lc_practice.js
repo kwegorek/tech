@@ -542,3 +542,17 @@ var detectCycle = function (head) {
 
   return head
 }
+
+var inorderTraversal = function(root) {
+    
+    if(root===null){
+        return []
+     }
+    
+    let values = inorderTraversal(root.left); 
+    values.push(root.val)
+    values = values.concat(inorderTraversal(root.right))
+    
+    return values
+    
+};
