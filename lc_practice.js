@@ -556,3 +556,25 @@ var inorderTraversal = function(root) {
     return values
     
 };
+
+var postorder = function(root) {
+    
+    if(root === null){
+        return []
+    }
+    
+    let values = []; 
+    let childrenLen = root.children.length
+    
+    
+    for(let i = 0; i < childrenLen; i++){
+        
+         values = values.concat(postorder(root.children[i])); 
+                
+    }
+    
+    values.push(root.val)
+    
+    return values
+       
+};
