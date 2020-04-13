@@ -1,0 +1,35 @@
+
+const inOrderTraversal = function(nodeItem){
+  if(nodeItem === null){
+    return []              <--- {1}
+  }
+  let values = inOrderTraversal(nodeItem.left)
+  values.push(nodeItem.val)
+  return values.concat(inOrderTraversal(nodeItem.right))
+}
+
+[ 5, 7, 9, 11, 13, 15, 20 ]
+
+
+
+const preOrderTraversal = function(nodeItem){
+  if(nodeItem === null){
+    return []
+  }
+  let values = [nodeItem.val];
+  values = values.concat((preOrderTraversal(nodeItem.left)))
+  return values.concat(preOrderTraversal(nodeItem.right))
+}
+The following will be the output in the console :
+[ 11, 7, 5, 9, 15, 13, 20 ]
+
+
+const postOrderTraversal = function(nodeItem){
+  if(nodeItem === null){
+    return []
+  }
+  let values = [];
+  values = values.concat(postOrderTraversal(nodeItem.left));
+  values = values.concat(postOrderTraversal(nodeItem.right)); 
+  values.push(nodeItem.val);
+  return values}
