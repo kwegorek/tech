@@ -31,3 +31,20 @@ var moveZeroes = function (nums) {
 
   return nums
 }
+
+var groupAnagrams = function (strs) {
+  let hashMap = {}
+
+  for (let i = 0; i < strs.length; i++) {
+    let stringSorted = strs[i].split('').sort().join('')
+
+    if (hashMap[stringSorted] === undefined) {
+      hashMap[stringSorted] = []
+      hashMap[stringSorted].push(strs[i])
+    } else {
+      hashMap[stringSorted].push(strs[i])
+    }
+  }
+
+  return Object.values(hashMap)
+}
