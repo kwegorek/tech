@@ -1,0 +1,16 @@
+var maxSubArray = function (nums) {
+  let curMax = nums[0]
+
+  for (let i = 0; i < nums.length; i++) {
+    let bestSum = 0
+
+    for (let j = i; j < nums.length; j++) {
+      bestSum += nums[j]
+
+      if (bestSum > curMax) {
+        curMax = bestSum
+      }
+    }
+  }
+  return curMax
+}
