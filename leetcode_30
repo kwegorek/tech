@@ -129,3 +129,53 @@ console.log(minStack)
 console.log(minStack.top(), 'top') // --> Returns 0.
 minStack.getMin() // --> Returns -2.
 
+// Do not edit the class below except
+// for the breadthFirstSearch method.
+// Feel free to add new properties
+// and methods to the class.
+class Node {
+  constructor(name) {
+    this.name = name;
+    this.children = [];
+  }
+
+  addChild(name) {
+    this.children.push(new Node(name));
+    return this;
+  }
+
+  breadthFirstSearch() {
+    // Write your code here.
+    let queue = [this]; 
+    let arr = []; 
+
+    while(queue.length){
+
+      let currentNode = queue.shift(); 
+
+      arr.push(currentNode.name)
+
+      for(let i=0; i<currentNode.children.length;i++){
+
+        queue.push(currentNode.children[i])
+
+      }
+
+
+    }
+    
+    return arr
+
+		
+  }
+}
+
+// Do not edit the line below.
+
+let nodeA = new Node('A'); 
+
+nodeA.addChild('B')
+
+nodeA.children[0].addChild('C')
+
+console.log(nodeA.breadthFirstSearch())
