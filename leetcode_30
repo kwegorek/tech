@@ -245,3 +245,58 @@ var isSymmetric = function (root) {
   return inOrderLeft && reverseInOrderRight
 }
 
+//binary search 
+var search = function (nums, target) {
+  if (nums.length === 0) {
+    return -1
+  }
+
+  let curMax = nums[0]
+  let maxIndx = 0
+
+  for (let i = 0; i < nums.length - 1; i++) {
+    if (nums[i + 1] > curMax) {
+      curMax = nums[i + 1]
+      maxIndx = i + 1
+    } else {
+      break
+    }
+  }
+
+  //first
+  let left = 0
+  let right = maxIndx
+
+  while (left <= right) {
+    let sumRanges = left + right
+
+    let mid = Math.floor(sumRanges / 2)
+    if (target < nums[mid]) {
+      right = mid - 1
+    } else if (target > nums[mid]) {
+      left = mid + 1
+    } else {
+      return mid
+    }
+  }
+  //second
+
+  let leftsec = maxIndx + 1
+  let rightsec = nums.length - 1
+
+  while (leftsec <= rightsec) {
+    let sumRanges = leftsec + rightsec
+
+    let mid = Math.floor(sumRanges / 2)
+    if (target < nums[mid]) {
+      rightsec = mid - 1
+    } else if (target > nums[mid]) {
+      leftsec = mid + 1
+    } else {
+      return mid
+    }
+  }
+
+  return -1
+}
+
