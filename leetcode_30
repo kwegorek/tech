@@ -207,3 +207,41 @@ class Node {
   }
 }
 
+var walk = function (leftBranch, rightBranch) {
+  //tree symmetric in value terms root.left=== root.right
+
+  if (leftBranch && rightBranch) {
+    let leftValue = leftBranch.val
+    let rightValue = rightBranch.val
+
+    if (leftValue != rightValue) {
+      return false
+    }
+
+    let valuesAndStructureCompareLeft = walk(leftBranch.left, rightBranch.right)
+    let valuesAndStructureCompareRight = walk(
+      rightBranch.right,
+      leftBranch.left
+    )
+
+    return valuesAndStructureCompareLeft && valuesAndStructureCompareRight
+  } else if (!leftBranch && !rightBranch) {
+    return true
+  } else {
+    return false
+  }
+}
+
+//traverse at tthe same time
+
+var isSymmetric = function (root) {
+  if (root === null) {
+    return true
+  }
+
+  let inOrderLeft = walk(root.left, root.right)
+  let reverseInOrderRight = walk(root.right, root.left)
+
+  return inOrderLeft && reverseInOrderRight
+}
+
