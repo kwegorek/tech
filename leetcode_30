@@ -300,3 +300,37 @@ var search = function (nums, target) {
   return -1
 }
 
+var middleNode = function(head) {
+    
+    let nodeLength=0; 
+    let curNode = head 
+    
+    while(curNode){
+
+        nodeLength++; 
+        curNode = curNode.next
+   
+    }
+    let middle = 0 
+    
+    if(nodeLength!=0){
+        
+       middle = Math.floor(nodeLength/2)
+     
+        }
+  
+    while(head){
+      
+        if(middle === 0){
+            return head
+        }else {
+        head= head.next
+        middle--
+           
+        }
+       
+    }
+    
+    return head
+};
+
