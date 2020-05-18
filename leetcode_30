@@ -333,4 +333,30 @@ var middleNode = function(head) {
     
     return head
 };
+//finding subsequence 
+
+function isValidSubsequence(array, sequence) {
+  // Write your code here.
+
+	let pointerSequence = 0
+		//traverse the main array 
+	for(let i =0; i< array.length; i++){
+		
+		if(array[i] === sequence[pointerSequence]){
+			
+			pointerSequence++
+			
+		}
+	}
+	if(pointerSequence === sequence.length){
+		console.log(sequence.length-1,pointerSequence )
+		return true
+	}else{
+		return false
+	}
+	//set pointers at the subsequence and move along the first array 
+	//to find element from the subsequencee
+	//if first element is found move the pointer in the subsequence and in the main 
+	//
+}
 
