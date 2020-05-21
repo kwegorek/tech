@@ -190,6 +190,21 @@ class Node {
     this.name = name;
     this.children = [];
   }
+  
+//rotate left 
+function rotate(a,n,d){
+
+    let mostleftElement; 
+
+    while(d > 0){
+
+        mostleftElement = Number(a.splice(0,1).join('')); 
+        d--
+        a.push(mostleftElement )
+
+    }
+    return a.join(' ')
+}
 
   addChild(name) {
     this.children.push(new Node(name));
