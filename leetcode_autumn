@@ -1,0 +1,29 @@
+var lengthOfLastWord = function(s) {
+
+  let curWord = ""
+
+  if (s.length === 0) {
+    return 0
+  }
+
+  let rightPointer = s.length - 1
+
+  while (rightPointer >= 0) {
+
+    if (s[rightPointer] !== " ") {
+      curWord += s[rightPointer]
+
+      if (s[rightPointer - 1] === " ") {
+        break;
+      }
+    }
+    rightPointer--
+  }
+
+  if (curWord.length) {
+    return curWord.length
+  } else {
+    return 0
+  }
+
+};
